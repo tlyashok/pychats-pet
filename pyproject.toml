@@ -11,10 +11,23 @@ fastapi = "^0.115.4"
 uvicorn = "^0.32.0"
 motor = "^3.6.0"
 
-
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.3"
+ipython = "^8.29.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+src = ["pychats", "tests"]
+lint.fixable = ["ALL"]
+line-length = 88
+lint.select = ["A", "TCH", "COM", "SIM", "E", "F", "W", "Q", "N", "ASYNC", "S"]
+lint.ignore = ["N818"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

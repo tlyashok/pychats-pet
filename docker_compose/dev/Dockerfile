@@ -13,4 +13,5 @@ RUN pip install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root --no-interaction --no-ansi
 
-COPY . /app/
+COPY src /app/
+COPY .env /app/

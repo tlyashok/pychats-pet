@@ -1,0 +1,16 @@
+services:
+  main-app:
+    container_name: main_app
+    build:
+      context: ../..
+      dockerfile: docker_compose/dev/Dockerfile
+    restart: always
+    volumes:
+      - ../../src/:/app
+    env_file:
+      - ../../.env
+    ports:
+      - "${API_PORT}:8000"
+    command: "uvicorn application.api.main:create_app --reload --host 0.0.0.0 --port 8000 --factory"
+
+
