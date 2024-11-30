@@ -3,6 +3,5 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class ApplicationException(Exception):
-    @property
-    def message(self) -> str:
-        return "Application error occurred."
+    type: str
+    error_value: str

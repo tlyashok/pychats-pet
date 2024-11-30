@@ -1,9 +1,16 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime
+from uuid import UUID
 
-from domain.values.message import Text
+from src.domain.entities.base import BaseEntity
+from src.domain.values.chat.message_text import MessageText
+
 
 @dataclass
-class Message:
-    uid: str
-    text: Text
-
+class Message(BaseEntity):
+    created_at: datetime = field(
+        default_factory=datetime.now,
+        kw_only=True,
+    )
+    user: UUID
+    message_text: MessageText

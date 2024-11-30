@@ -14,6 +14,9 @@ motor = "^3.6.0"
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.3"
 ipython = "^8.29.0"
+pytest = "^8.3.3"
+faker = "^30.8.2"
+black = "^24.10.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -23,11 +26,15 @@ build-backend = "poetry.core.masonry.api"
 src = ["pychats", "tests"]
 lint.fixable = ["ALL"]
 line-length = 88
-lint.select = ["A", "TCH", "COM", "SIM", "E", "F", "W", "Q", "N", "ASYNC", "S"]
-lint.ignore = ["N818"]
+lint.select = ["A", "TCH", "COM", "SIM", "E", "F", "W", "Q", "N", "ASYNC", "S", "I"]
+lint.ignore = ["N818", "S101"]
 
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
+
+[tool.black]
+line-length = 88
+skip-string-normalization = false
