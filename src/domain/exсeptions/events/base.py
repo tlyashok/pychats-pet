@@ -1,5 +1,5 @@
 from src.domain.exсeptions.base import ApplicationException
 
 
-class ChatException(ApplicationException):
+class EventException(ApplicationException):
     pass

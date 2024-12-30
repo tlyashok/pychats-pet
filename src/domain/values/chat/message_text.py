@@ -1,23 +1,30 @@
-from dataclasses import dataclass
-
-from src.domain.constants import MAX_CHAT_MESSAGE_LEN
 from src.domain.exсeptions.chat.message_text import (
     MessageTextException,
-    MessageTextTypesException,
+    MessageTextExceptionType,
 )
+from src.domain.utils.constants import MAX_CHAT_MESSAGE_LEN
 from src.domain.values.base import BaseValueObject
 
 
-@dataclass(frozen=True)
 class MessageText(BaseValueObject):
-    value: str
+    _value: str
+
+    def __init__(self, value: str):
+        self._value = value
+        self._validate()
+
+    @property
+    def value(self):
+        return self._value
 
     def _validate(self):
-        if not self.value:
+        if not self._value:
             raise MessageTextException(
-                MessageTextTypesException.MESSAGE_IS_EMPTY, self.value,
+                type_=MessageTextExceptionType.MESSAGE_IS_EMPTY,
+                value=self._value,
             )
-        if len(self.value) > MAX_CHAT_MESSAGE_LEN:
+        if len(self._value) > MAX_CHAT_MESSAGE_LEN:
             raise MessageTextException(
-                MessageTextTypesException.MESSAGE_IS_TOO_LONG, self.value,
+                type_=MessageTextExceptionType.MESSAGE_IS_TOO_LONG,
+                value=self._value,
             )
