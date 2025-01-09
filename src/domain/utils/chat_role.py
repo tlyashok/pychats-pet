@@ -1,6 +1,6 @@
 from enum import StrEnum
 
-from src.domain.exсeptions.chat.chat_roles import (
+from src.domain.exсeptions.chat_exceptions.chat_roles import (
     ChatRolesException,
     ChatRolesExceptionType,
 )

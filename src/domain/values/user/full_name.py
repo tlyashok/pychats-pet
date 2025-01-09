@@ -1,4 +1,4 @@
-from src.domain.exсeptions.user.full_name import (
+from src.domain.exсeptions.user_exceptions.full_name import (
     UserFullnameException,
     UserFullnameTypesException,
 )

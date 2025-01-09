@@ -2,7 +2,7 @@ from datetime import datetime
 from uuid import UUID
 
 from src.domain.events.base import DomainEvent, DomainEventType
-from src.domain.exсeptions.events.serialization import (
+from src.domain.exсeptions.events_exceptions.serialization import (
     EventSerializationException,
     EventSerializationTypesException,
 )

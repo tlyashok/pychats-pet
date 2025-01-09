@@ -1,6 +1,6 @@
 from enum import StrEnum
 
-from src.domain.exсeptions.chat.base import ChatException
+from src.domain.exсeptions.chat_exceptions.base import ChatException
 from src.domain.utils.constants import MAX_CHAT_MESSAGE_LEN
 
 

@@ -1,21 +1,21 @@
 from uuid import uuid4
 
 import pytest
-from src.domain.aggregated_roots.chat import ChatRoot
+from src.domain.aggregated_roots.chat_root import ChatRoot
 from src.domain.events.chat_members.user_changed_role import UserChangedRole
 from src.domain.events.chat_members.user_entered_chat import UserEnteredChat
 from src.domain.events.chat_members.user_left_chat import UserLeftChat
 from src.domain.events.chat_messages.message_removed import MessageRemoved
 from src.domain.events.chat_messages.message_sent import MessageSent
-from src.domain.exсeptions.chat.chat_members import (
+from src.domain.exсeptions.chat_exceptions.chat_members import (
     ChatMembersException,
     ChatMembersExceptionType,
 )
-from src.domain.exсeptions.chat.chat_messages import (
+from src.domain.exсeptions.chat_exceptions.chat_messages import (
     ChatMessagesException,
     ChatMessagesExceptionType,
 )
-from src.domain.exсeptions.chat.chat_roles import (
+from src.domain.exсeptions.chat_exceptions.chat_roles import (
     ChatRolesException,
     ChatRolesExceptionType,
 )
@@ -111,7 +111,6 @@ def test_add_message_success(chat_root):
     assert messages[0].message_text == message_text
     assert isinstance(chat_root.events[0], UserEnteredChat)
     assert isinstance(chat_root.events[1], MessageSent)
-
 
 
 def test_remove_message_success(chat_root):

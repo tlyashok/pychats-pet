@@ -1,10 +1,9 @@
 from uuid import UUID
 
-from src.domain.aggregated_roots.base import BaseRoot
 from src.domain.entities.user import User
 
 
-class UserRoot(BaseRoot):
+class UserRoot:
     _user: User
 
     def __init__(self, username: str, full_name: str, user_uuid: UUID = None) -> None:

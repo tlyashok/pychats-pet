@@ -1,7 +1,7 @@
-# chat
+# chat_exceptions
 MAX_CHAT_MESSAGE_LEN = 1000
 MAX_CHAT_TITLE_LEN = 255
 
-# user
+# user_exceptions
 MAX_USERNAME_LEN = 50
 MAX_FULLNAME_LEN = 150

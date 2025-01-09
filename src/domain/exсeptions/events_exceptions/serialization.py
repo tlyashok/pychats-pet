@@ -1,6 +1,6 @@
 from enum import StrEnum
 
-from src.domain.exсeptions.events.base import EventException
+from src.domain.exсeptions.events_exceptions.base import EventException
 
 
 class EventSerializationTypesException(StrEnum):

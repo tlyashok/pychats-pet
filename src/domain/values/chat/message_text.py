@@ -1,4 +1,4 @@
-from src.domain.exсeptions.chat.message_text import (
+from src.domain.exсeptions.chat_exceptions.message_text import (
     MessageTextException,
     MessageTextExceptionType,
 )

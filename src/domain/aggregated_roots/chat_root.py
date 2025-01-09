@@ -1,6 +1,5 @@
 from uuid import UUID
 
-from src.domain.aggregated_roots.base import BaseRoot
 from src.domain.entities.chat import Chat
 from src.domain.entities.message import Message
 from src.domain.events.base import DomainEvent
@@ -9,18 +8,18 @@ from src.domain.events.chat_members.user_entered_chat import UserEnteredChat
 from src.domain.events.chat_members.user_left_chat import UserLeftChat
 from src.domain.events.chat_messages.message_removed import MessageRemoved
 from src.domain.events.chat_messages.message_sent import MessageSent
-from src.domain.exсeptions.chat.chat_members import (
+from src.domain.exсeptions.chat_exceptions.chat_members import (
     ChatMembersException,
     ChatMembersExceptionType,
 )
-from src.domain.exсeptions.chat.chat_messages import (
+from src.domain.exсeptions.chat_exceptions.chat_messages import (
     ChatMessagesException,
     ChatMessagesExceptionType,
 )
 from src.domain.utils.chat_role import ChatRole, to_chat_role
 
 
-class ChatRoot(BaseRoot):
+class ChatRoot:
     _chat: Chat
     _users: dict[UUID, ChatRole]  # UUID пользователя
     _messages: dict[UUID, Message]  # UUID сообщения

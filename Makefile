@@ -4,13 +4,13 @@ APP_CONTAINER = main_app
 
 
 up:
-	docker-compose $(DEV_DC) $(ENV) up
+    docker-compose $(DEV_DC) $(ENV) up
 
 down:
-	docker-compose $(DEV_DC) $(ENV) down
+    docker-compose $(DEV_DC) $(ENV) down
 
 env:
-	copy .env.example .env
+    copy .env.example .env
 
 shell:
-	docker exec -it $(APP_CONTAINER) bash
+    docker exec -it $(APP_CONTAINER) bash

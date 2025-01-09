@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 from uuid import UUID
 
-from src.domain.exсeptions.chat.base import ChatException
+from src.domain.exсeptions.chat_exceptions.base import ChatException
 
 
 class ChatMessagesExceptionType(StrEnum):

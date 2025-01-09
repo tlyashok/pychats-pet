@@ -1,4 +1,4 @@
-from src.domain.exсeptions.chat.chat_title import (
+from src.domain.exсeptions.chat_exceptions.chat_title import (
     ChatTitleException,
     ChatTitleExceptionType,
 )

@@ -1,4 +1,4 @@
-from src.domain.exсeptions.user.username import (
+from src.domain.exсeptions.user_exceptions.username import (
     UsernameException,
     UsernameTypesException,
 )
